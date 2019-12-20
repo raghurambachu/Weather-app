@@ -70,10 +70,12 @@ footer{
 }
 
 .form-container input{
+        text-align: center;
         padding: 0.75em 2.5em;
         font-size: 1.25rem;
         border: 1px solid skyblue;
         border-radius: 9px;
+        font-family: 'Ubuntu', sans-serif;
         
 }
 
@@ -115,4 +117,24 @@ button{
         height: 30px;
         width: 200px;
         object-fit: cover;
+}
+
+.temp-range{
+        text-transform: uppercase;
+        letter-spacing: 1.1px;
+        font-size: 1.1rem;
+}
+
+/*  about page*/
+.about-content{
+        font-size: 1.5rem;
+        margin-top: 2.5em;
+        opacity: 0.8;
+}
+
+/* help page */
+.help-content{
+        font-size: 1.5rem;
+        margin-top: 5em;
+
 }

@@ -59,11 +59,12 @@ app.get('/weather',(req,res) =>{
         let  geoLocation = geocode.geoCode(address,(error,{latitude,longitude,place} = {})=>{
                       
                         if(error) return res.send({error})
-                      else forecast.forecast(`${latitude},${longitude}`,place,(error,{placename,temp,precip, summary}= {}) =>{
+                      else forecast.forecast(`${latitude},${longitude}`,place,(error,{placename,temp,precip, summary,minTemp,maxTemp}= {}) =>{
                               if(error) return res.send({error})
                               else {
                                       const message = `In ${placename} it is ${summary} It's currently ${temp} degree celsius out there. There is ${precip}% possiblity of rain`
-                                      return res.send({message,address})
+                                      const tempRange = `Min Temp : ${minTemp} &#8451; and Max Temp : ${maxTemp} &#8451;`
+                                      return res.send({message,address,tempRange})
                               }
                       })
         })

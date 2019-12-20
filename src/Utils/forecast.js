@@ -14,11 +14,15 @@ const forecast = (coordinate,placename,callback) =>{
                         const temp = data.currently.temperature;
                         const precip = data.currently.precipProbability;
                         const summary = data.daily.data[0].summary;
+                        const minTemp = data.daily.data[0].temperatureMin;
+                        const maxTemp = data.daily.data[0].temperatureMax;
                         const weatherData = {
                                 placename,
                                 temp,
                                 precip,
-                                summary
+                                summary,
+                                minTemp,
+                                maxTemp
                         }
                         callback(undefined,weatherData)
                 }
